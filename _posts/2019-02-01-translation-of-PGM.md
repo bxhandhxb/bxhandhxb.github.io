@@ -88,10 +88,12 @@ X and Z are considered to be connected, even if there’s no edge between them.
 - If one or both of the variables are missing (because they were givens, and were
 therefore deleted), they are independent.
 
-> active trail : //个人理解，此处的active即为dependent
+> active trail : 
 
  Let X, Y , Z be three sets of nodes in G. We say that X and Y are d-separated given Z, if there is no active trail between any node x belongs to X and y belongs to Y given Z.
 
+trail是active，是说该trail上没有已观测到的变量。
+marginalize over A 是指沿着A进行求和，消除A。
 
 
 
