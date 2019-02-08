@@ -1,0 +1,58 @@
+---
+layout: post
+title: PGM notes3 
+date: 2019-02-08 18:25:24.000000000 +09:00
+---
+
+今天要学习的是cmu的课程lec3，讲无向图在PGM的应用。有向图和无向图都有无法表达的独立关系，所以要两者结合起来使用。
+
+> Global Markov Independencies
+
+B separates A and C if every path from a node in A to a node
+in C passes through a node in B.
+
+不必像有向图模型中，还要做ancestral graph，才能得到
+
+> Local Markov independencies
+
+> qualitative specification
+
+BN中的markov blanket与MRF中的不同，前者的a节点的markov blanket是a的父母，孩子，及孩子的其他父母；
+后者则是a的邻居。
+
+every node is independent of its unmarkov blanket given its market blanket.
+
+> quantitative specification
+
+clique potentials can be any function, and even can be a table. 
+
+首先说明一下，在英文的表达中，maximal clique和maximum 完全不同的。
+
+团clique（clique）是一个无向图（undirected graph ）的子图，该子图中任意两个顶点之间均存在一条边。
+
+极大团maximal clique是一个团，该团不能被更大的团所包含，换句话说，再也不存在一个点与该团中的任意顶点之间存在一条边。
+
+团的大小size是指一个团中包含的顶点数，size=k的团，称为k-团。
+
+最大团maximum clique是指一个图中size最大的maximal clique。
+
+团数clique number是指一个图的maximum clique的size。
+
+> 3元比多个2元表达的范围广  I(P) == I(P')  D(P) > D(P')
+
+> summary 
+
+Hammersley-Clifford Theorem
+
+Let P be a positive distribution over V, and H a Markov network graph over V. If H is an I-map for P, then P is a Gibbs distribution over H.
+
+Gibs distribution is the cliques' potentials' multiplication normalized by Z.
+
+正如之前提到的，MRF需要potentials function是正的，不是很方便；所以，提供了指数形式，把energy function转成potential function。
+In physics, this is called the "Boltzmann distribution". In statistics, this is called a log-linear model.
+
+受限玻尔兹曼机是一大类神经网络。
+
+RBM等可以看作一个解决问题的框架，把自己的函数定义进去后得到一系列结果。 
+
+//I guess 有label CRF   无label RBM
