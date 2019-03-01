@@ -1,7 +1,7 @@
 ---
 layout: post
 title: paper translation 之 abstract introduction
-date: 2019-02-27 21:25:24.000000000 +09:00
+date: 2019-02-28 22:25:24.000000000 +09:00
 ---
 
 https://zhuanlan.zhihu.com/p/35379027
